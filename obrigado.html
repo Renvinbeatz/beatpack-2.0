@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pedido confirmado — Renvin Beatz</title>
+<meta name="description" content="Seu Beat Pack está a caminho. Confira seu e-mail para acessar os 30 beats.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1 !important; transform:none !important;}</style></noscript>
+<style>
+/* ==========================================================================
+   RENVIN BEATZ — PÁGINA DE OBRIGADO
+   Mesmo sistema de design do index.html (chrome + glow azul)
+   ========================================================================== */
+:root{
+  --bg:            #050508;
+  --bg-card:       #0c0d16;
+  --bg-card-2:     #101120;
+  --line:          rgba(255,255,255,.07);
+  --line-strong:   rgba(255,255,255,.14);
+  --ink:           #F5F5F5;
+  --ink-dim:       #93949e;
+  --ink-faint:     #55565f;
+  --glow-1:        #4f6bff;
+  --glow-2:        #7c93ff;
+  --glow-3:        #1c2557;
+  --chrome: linear-gradient(180deg, #ffffff 0%, #b9bcc6 45%, #ffffff 100%);
+  --pill:  linear-gradient(180deg, #ffffff 0%, #e4e4e9 100%);
+  --pill-ink: #0a0a0d;
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --ff-display: 'Manrope', 'SF Pro Display', -apple-system, sans-serif;
+  --ff-body: 'Inter', 'SF Pro Text', -apple-system, sans-serif;
+  --ff-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --ease: cubic-bezier(.16,.8,.24,1);
+  --ease-bounce: cubic-bezier(.34,1.7,.64,1);
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--ff-body);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;
+  min-height:100vh; display:flex; flex-direction:column;
+}
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--glow-2); outline-offset:3px; border-radius:4px; }
+.wrap{ max-width:640px; margin:0 auto; padding:0 24px; width:100%; }
+
+.grain{ position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.05; mix-blend-mode:overlay; }
+
+.bg-glow{ position:fixed; inset:0; z-index:-2; pointer-events:none; }
+.bg-glow .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.55; animation:drift 14s ease-in-out infinite alternate; }
+.blob-1{ width:520px; height:520px; top:-220px; right:-160px; background:radial-gradient(circle, var(--glow-1), transparent 70%); }
+.blob-2{ width:420px; height:420px; bottom:-200px; left:-180px; background:radial-gradient(circle, var(--glow-3), transparent 70%); opacity:.65; animation-duration:17s; animation-delay:-4s; }
+@keyframes drift{ 0%{ transform:translate(0,0) scale(1); } 100%{ transform:translate(70px,-50px) scale(1.25); } }
+
+.float-particle{ position:fixed; z-index:-1; border-radius:50%; background:var(--glow-2); filter:blur(1px); animation:float 5s ease-in-out infinite; pointer-events:none; }
+@keyframes float{ 0%,100%{ transform:translateY(0) translateX(0) scale(1); opacity:.4; } 50%{ transform:translateY(-38px) translateX(16px) scale(1.4); opacity:1; } }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--ff-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim);
+}
+.eyebrow::before{
+  content:''; width:6px; height:6px; border-radius:50%;
+  background:linear-gradient(135deg,var(--glow-1),var(--glow-2)); box-shadow:0 0 10px var(--glow-1);
+}
+.chrome{ background:var(--chrome); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+.glow-card{
+  position:relative; border-radius:var(--radius-lg); background:var(--bg-card);
+  border:1px solid var(--line-strong); overflow:hidden; isolation:isolate;
+}
+.glow-card::before{
+  content:''; position:absolute; z-index:-1; top:-60%; left:-30%; width:90%; height:90%;
+  background:radial-gradient(closest-side, rgba(79,107,255,.5), transparent 70%); filter:blur(10px); opacity:.75;
+}
+.glow-card::after{ content:''; position:absolute; inset:0; z-index:-1; border-radius:inherit; background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%); }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  border-radius:999px; font-family:var(--ff-body); font-weight:700; font-size:15px;
+  padding:16px 28px; transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--pill); color:var(--pill-ink); box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 14px 34px -8px rgba(79,107,255,.45); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 0 0 1px rgba(255,255,255,.1), 0 20px 44px -8px rgba(79,107,255,.6); }
+.btn-ghost{ background:transparent; color:var(--ink); border:1px solid var(--line-strong); }
+.btn-ghost:hover{ border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.03); }
+.btn-block{ width:100%; }
+
+.reveal{ opacity:0; transform:translateY(46px) scale(.96); transition:opacity .7s var(--ease), transform .8s var(--ease-bounce); }
+.reveal.is-visible{ opacity:1; transform:translateY(0) scale(1); }
+
+/* ---------- header ---------- */
+.site-header{ padding:26px 0; }
+.logo{ font-family:var(--ff-display); font-weight:800; font-size:16px; text-align:center; display:block; }
+.logo span{ color:var(--ink-dim); font-weight:600; }
+
+/* ---------- main ---------- */
+main{ flex:1; display:flex; align-items:center; padding:40px 0 60px; }
+.content{ width:100%; }
+
+.status-icon{
+  position:relative;
+  width:60px; height:60px; border-radius:50%; margin:0 auto 26px;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(79,107,255,.14); border:1px solid var(--line-strong);
+  box-shadow:0 0 0 8px rgba(79,107,255,.06);
+  transform:scale(0); opacity:0;
+}
+.status-icon::before, .status-icon::after{
+  content:''; position:absolute; inset:-1px; border-radius:50%;
+  border:2px solid var(--glow-2); opacity:0;
+}
+.reveal.is-visible .status-icon{ animation:popIn .7s var(--ease-bounce) .1s forwards; }
+.reveal.is-visible .status-icon::before{ animation:ripple 2s var(--ease) .55s infinite; }
+.reveal.is-visible .status-icon::after{ animation:ripple 2s var(--ease) 1.15s infinite; }
+@keyframes popIn{ from{ transform:scale(0) rotate(-35deg); opacity:0; } 60%{ transform:scale(1.25) rotate(6deg); opacity:1; } to{ transform:scale(1) rotate(0deg); opacity:1; } }
+@keyframes ripple{ 0%{ transform:scale(1); opacity:.8; border-width:2px; } 100%{ transform:scale(2.8); opacity:0; border-width:.5px; } }
+.status-icon svg{ width:26px; height:26px; stroke:var(--glow-2); }
+.status-icon svg path{
+  stroke-dasharray:32; stroke-dashoffset:32;
+}
+.reveal.is-visible .status-icon svg path{ animation:drawCheck .5s var(--ease) .55s forwards; }
+@keyframes drawCheck{ to{ stroke-dashoffset:0; } }
+
+.confetti{ position:absolute; inset:0; pointer-events:none; z-index:1; }
+.confetti span{
+  position:absolute; top:50%; left:50%; width:6px; height:6px; border-radius:1px;
+  background:var(--glow-2); opacity:0; transform:translate(-50%,-50%);
+}
+.reveal.is-visible .confetti span{ animation:confettiBurst .9s var(--ease-bounce) forwards; }
+@keyframes confettiBurst{
+  0%{ transform:translate(-50%,-50%) scale(0) rotate(0deg); opacity:1; }
+  25%{ opacity:1; }
+  100%{ transform:translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1) rotate(220deg); opacity:0; }
+}
+
+.confirm-title{
+  font-family:var(--ff-display); font-weight:800; letter-spacing:-.02em; line-height:1.1;
+  font-size:clamp(30px,7vw,44px); text-align:center; margin-bottom:14px;
+}
+.shimmer-text{
+  background:linear-gradient(100deg, #ffffff 20%, var(--glow-2) 40%, #ffffff 60%, #b9bcc6 80%);
+  background-size:250% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:shimmer 3s linear infinite;
+}
+@keyframes shimmer{ 0%{ background-position:0% 50%; } 100%{ background-position:-250% 50%; } }
+.confirm-sub{ text-align:center; font-size:16px; color:var(--ink-dim); max-width:420px; margin:0 auto 44px; line-height:1.6; }
+
+/* ---------- email card ---------- */
+.email-card{ padding:28px 26px; margin-bottom:16px; display:flex; align-items:flex-start; gap:16px; }
+.email-icon{
+  flex:none; width:42px; height:42px; border-radius:12px;
+  background:rgba(79,107,255,.14); border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+}
+.email-icon svg{ width:19px; height:19px; stroke:var(--glow-2); }
+.email-card h2{ font-family:var(--ff-display); font-weight:700; font-size:17px; margin-bottom:8px; }
+.email-card p{ font-size:14px; color:var(--ink-dim); line-height:1.65; }
+.email-card p + p{ margin-top:8px; }
+
+/* ---------- instagram card ---------- */
+.ig-card{ padding:32px 26px; text-align:center; margin:36px 0 16px; }
+.ig-icon{
+  width:52px; height:52px; border-radius:16px; margin:0 auto 20px;
+  background:rgba(79,107,255,.14); border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+  animation:bounceSoft 2.4s ease-in-out infinite;
+}
+@keyframes bounceSoft{ 0%,100%{ transform:translateY(0) rotate(0deg); } 50%{ transform:translateY(-7px) rotate(-4deg); } }
+.ig-icon svg{ width:24px; height:24px; stroke:var(--glow-2); }
+.ig-card h2{ font-family:var(--ff-display); font-weight:800; font-size:22px; letter-spacing:-.01em; margin-bottom:10px; }
+.ig-card p{ font-size:14px; color:var(--ink-dim); line-height:1.65; max-width:360px; margin:0 auto 24px; }
+.ig-card .btn-primary{ animation:ctaGlow 2.2s ease-in-out infinite; }
+@keyframes ctaGlow{
+  0%,100%{ box-shadow:0 0 0 1px rgba(255,255,255,.06), 0 14px 34px -8px rgba(79,107,255,.45); }
+  50%{ box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 20px 52px -6px rgba(79,107,255,.85); }
+}
+.ig-handle{ font-family:var(--ff-mono); font-size:13px; color:var(--ink-faint); margin-top:16px; }
+
+/* ---------- support line ---------- */
+.support-line{ text-align:center; margin-top:32px; font-size:13px; color:var(--ink-faint); }
+.support-line a{ color:var(--ink-dim); text-decoration:underline; text-underline-offset:3px; transition:color .2s; }
+.support-line a:hover{ color:var(--ink); }
+
+/* ---------- footer ---------- */
+.site-footer{ padding:30px 0; border-top:1px solid var(--line); text-align:center; }
+.site-footer p{ font-size:12px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<svg class="grain" width="100%" height="100%" aria-hidden="true">
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+  <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+<div class="bg-glow" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="float-particle" style="width:6px;height:6px;top:16%;left:10%;animation-delay:0s;"></div>
+  <div class="float-particle" style="width:4px;height:4px;top:64%;left:87%;animation-delay:.8s;"></div>
+  <div class="float-particle" style="width:5px;height:5px;top:78%;left:18%;animation-delay:1.6s;"></div>
+  <div class="float-particle" style="width:3px;height:3px;top:30%;left:80%;animation-delay:2.3s;"></div>
+  <div class="float-particle" style="width:4px;height:4px;top:50%;left:6%;animation-delay:3.1s;"></div>
+</div>
+
+<header class="site-header">
+  <a class="logo" href="index.html">Renvin <span>Beatz</span></a>
+</header>
+
+<main>
+  <div class="wrap content">
+
+    <div class="reveal">
+      <div class="status-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <div class="confetti" id="confetti" aria-hidden="true"></div>
+      </div>
+      <p class="eyebrow" style="display:flex; justify-content:center; margin-bottom:18px;">Pedido confirmado</p>
+      <h1 class="confirm-title">Seus beats estão<br><span class="shimmer-text">a caminho.</span></h1>
+      <p class="confirm-sub">Obrigado por comprar o Beat Pack. Falta só um passo pra você começar a criar.</p>
+    </div>
+
+    <div class="email-card glow-card reveal">
+      <div class="email-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <div>
+        <h2>Confira seu e-mail</h2>
+        <p>Enviamos o acesso aos seus 30 beats para o e-mail usado na compra.</p>
+        <p>Não encontrou? Dá uma olhada na caixa de spam ou promoções.</p>
+      </div>
+    </div>
+
+    <div class="ig-card glow-card reveal">
+      <div class="ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+      <h2>Bora além dos beats?</h2>
+      <p>Segue lá no Instagram pra ver beats novos, bastidores da produção e conhecer melhor o meu trabalho.</p>
+      <a class="btn btn-primary" href="https://www.instagram.com/renvinbeatz/" target="_blank" rel="noopener">Seguir @renvinbeatz</a>
+      <div class="ig-handle">@renvinbeatz</div>
+    </div>
+
+    <p class="support-line reveal">Alguma dúvida com o pedido? Chama no <a href="https://wa.me/558199793626" target="_blank" rel="noopener">WhatsApp</a> ou manda um e-mail pra <a href="mailto:contato.renvinbeatz@gmail.com">contato.renvinbeatz@gmail.com</a>.</p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Renvin Beatz. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+/* ---------- confete no ícone de sucesso ---------- */
+(function buildConfetti(){
+  const host = document.getElementById('confetti');
+  const N = 12;
+  for (let i = 0; i < N; i++) {
+    const span = document.createElement('span');
+    const angle = (Math.PI * 2 * i / N) + (Math.random() * 0.5 - 0.25);
+    const dist = 42 + Math.random() * 34;
+    span.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+    span.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+    span.style.background = i % 3 === 0 ? '#ffffff' : 'var(--glow-2)';
+    span.style.animationDelay = (0.75 + Math.random() * 0.15) + 's';
+    host.appendChild(span);
+  }
+})();
+
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
+});
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+</script>
+
+</body>
+</html>
