@@ -409,13 +409,13 @@ ul{ list-style:none; }
 .testi-frame{
   position:relative; border-radius:var(--radius-md); overflow:hidden;
   border:1px solid var(--line-strong); background:var(--bg-card);
-  min-height:420px; transition:transform .3s var(--ease), border-color .3s var(--ease);
+  transition:transform .3s var(--ease), border-color .3s var(--ease);
 }
 .testi-frame:hover{ transform:translateY(-4px); border-color:rgba(255,255,255,.25); }
 .testi-frame img{ width:100%; height:auto; display:block; }
 .testi-fallback{
-  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:12px; padding:24px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; padding:70px 24px; text-align:center;
 }
 .testi-fallback svg{ width:26px; height:26px; stroke:var(--ink-faint); }
 .testi-fallback span{ font-family:var(--ff-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); line-height:1.6; }
@@ -434,6 +434,7 @@ ul{ list-style:none; }
 .offer-price-sub{ text-align:center; font-size:14px; color:var(--ink-dim); margin-bottom:30px; }
 .offer-checklist{ display:flex; flex-direction:column; gap:14px; margin-bottom:32px; }
 .offer-checklist li{ display:flex; align-items:center; gap:13px; font-size:14px; color:var(--ink); }
+.offer-checklist li strong{ color:var(--glow-2); font-weight:700; }
 .check-badge{
   flex:none; width:26px; height:26px; border-radius:50%;
   background:rgba(79,107,255,.14); border:1px solid var(--line-strong);
@@ -598,6 +599,24 @@ ul{ list-style:none; }
 .text-center{ text-align:center; }
 .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1051828331097889');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1051828331097889&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -647,7 +666,7 @@ ul{ list-style:none; }
     <div class="hero-grid">
       <div>
         <p class="hero-eyebrow eyebrow">30 beats. Uma nova fase.</p>
-        <h1 class="hero-title">Seu próximo som<br>começa aqui.</h1>
+        <h1 class="hero-title">Cansado de gastar caro<br>e ainda perder horas<br>procurando beats?</h1>
         <p class="hero-sub">30 beats prontos para você transformar ideias em músicas por apenas R$ 23,97.</p>
         <div class="hero-cta-row">
           <a class="btn btn-primary" href="#oferta">Quero os 30 beats — R$ 23,97</a>
@@ -805,10 +824,11 @@ ul{ list-style:none; }
       <p class="offer-price-sub">Acesso imediato · sem mensalidades</p>
 
       <ul class="offer-checklist">
-        <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>30 beats (Trap, R&B e Trap Soul)</li>
+        <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>30 beats (Trap, Hard, R&B, Drill, Boombap, Afrobeat, HoodTrap e mais)</li>
         <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Produção de alta qualidade</li>
         <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Prontos para escrever e gravar</li>
-        <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Acesso digital após a compra</li>
+        <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Acesso vitalício</strong></li>
+        <li><span class="check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><strong>Licença de uso inclusa</strong></li>
       </ul>
 
       <a class="btn btn-primary btn-block btn-lg" id="offerCta" href="https://pague-certo.com/checkout/?u=EvlTRM_kUVIjbVfZztXMfg6CxoAD4-B8l7meV2R7YCQ&product=0b02687c-9bbb-421e-a742-2be449423aa0">Quero o Beat Pack agora</a>
@@ -968,11 +988,11 @@ ul{ list-style:none; }
    Prints dos depoimentos: crie uma pasta "prints" do lado do index.html e coloque os arquivos como "001.jpg", "002.jpg", "003.jpg" (troque o "image" abaixo se usar outro nome)
    ========================================================================== */
 const BEATS = [
-  { title: "Planos", genre: "Trap", file: "previas/001.mp3", duration: "0:00" },
-  { title: "4x4", genre: "Hard", file: "previas/002.mp3", duration: "0:00" },
-  { title: "Intenções", genre: "R&B", file: "previas/003.mp3", duration: "0:00" },
-  { title: "Noturno", genre: "Drill", file: "previas/004.mp3", duration: "0:00" },
-  { title: "Barras", genre: "Boombap", file: "previas/005.mp3", duration: "0:00" },
+  { title: "Planos", genre: "Trap", file: "previas/001.mp3", duration: "0:32" },
+  { title: "4x4", genre: "Hard", file: "previas/002.mp3", duration: "0:36" },
+  { title: "Intenções", genre: "R&B", file: "previas/003.mp3", duration: "0:40" },
+  { title: "Noturno", genre: "Drill", file: "previas/004.mp3", duration: "0:31" },
+  { title: "Barras", genre: "Boombap", file: "previas/005.mp3", duration: "0:44" },
 ];
 
 const TESTIMONIALS = [
